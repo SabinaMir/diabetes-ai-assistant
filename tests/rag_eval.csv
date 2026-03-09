@@ -1,0 +1,10 @@
+question,expected_source
+что такое неклассифицированный диабет,Classification_of_diabetes
+запиши сахар 7.5,log_glucose
+сахар 8.1 после еды,log_glucose
+покажи мой сахар,show_glucose
+сегодня слабость,log_symptom
+что такое диабет 1 типа,general_qa
+что такое MODY диабет,rag_qa
+аналоги оземпика,drug_analogs
+что за препарат форсига,drug_info

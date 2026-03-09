@@ -1,0 +1,9 @@
+question,expected_intent
+запиши сахар 7.4 после ужина,log_glucose
+сегодня слабость и тошнота,log_symptom
+покажи мой сахар,show_glucose
+покажи симптомы,show_symptoms
+проанализируй мой сахар,analyze_glucose
+что такое диабет 2 типа,general_qa
+что такое неклассифицированный диабет,rag_qa
+сахар 2.8 и трясет,emergency
