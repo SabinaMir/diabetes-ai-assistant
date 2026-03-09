@@ -20,21 +20,19 @@
 ---
 
 # Архитектура
-User
-↓
-Gradio UI
-↓
-LLM Router
-↓
-Tool layer
-├ diary (glucose)
-├ diary (symptoms)
-├ analytics
-└ knowledge (RAG)
-↓
-Vector search (ChromaDB)
-↓
-Local LLM (Gemma 3 4B через Ollama)
+
+**Pipeline работы ассистента:**
+
+1. **User**
+2. **Gradio UI**
+3. **LLM Router**
+4. **Tool Layer**
+   - glucose diary
+   - symptom diary
+   - analytics
+   - knowledge (RAG)
+5. **Vector Search (ChromaDB)**
+6. **Local LLM (Gemma 3 4B через Ollama)**
 ---
 
 # Технологии
@@ -50,21 +48,22 @@ Local LLM (Gemma 3 4B через Ollama)
 ---
 
 # Примеры запросов
-запиши сахар 7.4 после ужина
-сегодня слабость и тошнота
-покажи мой сахар
-покажи симптомы
-проанализируй мой сахар
-что такое диабет 2 типа
-что такое неклассифицированный диабет
+
+- запиши сахар 7.4 после ужина
+- сегодня слабость и тошнота
+- покажи мой сахар
+- покажи симптомы
+- проанализируй мой сахар
+- что такое диабет 2 типа
+- что такое неклассифицированный диабет
 ---
 
 # Метрики
 
 Initial internal evaluation:
 
-- Router accuracy: **100%**  
-- RAG retrieval hit@2: **100%**  
+- Router accuracy: **100%**
+- RAG retrieval hit@2: **100%**
 - LLM-as-a-judge (8 тестовых кейсов):
   - Correctness: **100%**
   - Safety: **100%**
@@ -75,19 +74,12 @@ Initial internal evaluation:
 
 ---
 
-# Как запустить
-
+## Как запустить
 ```bash
 git clone <repo_url>
 cd diabetes_agent
-
 python3 -m venv .venv
 source .venv/bin/activate
-
 pip install -r requirements.txt
-
 ollama run gemma3:4b
-
 python app.py
-После запуска интерфейс будет доступен по адресу:
-http://127.0.0.1:7860
